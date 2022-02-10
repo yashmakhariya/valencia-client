@@ -6,7 +6,7 @@
     <div id="wrapper">
 
         @include('admin.sidebar')
-        
+
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -21,7 +21,7 @@
 
                         <!-- Cards Row (Start) -->
                         @foreach ($product as $item)
-                    
+
                             <form action="{{route('update.product')}}" method="POST" enctype="multipart/form-data">
 
                             @csrf
@@ -137,7 +137,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <br>
                                                 @if (!is_null($item->product_image_2))
-                                                <img src="{{url($item->product_image_2)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/2')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>  
+                                                <img src="{{url($item->product_image_2)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/2')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>
                                                 @endif
                                                 <label for="product-image-2">Product Image - 2</label>
                                                 <input type="file" name="product-image-2" class="input-group-text input-box p-1">
@@ -147,7 +147,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <br>
                                                 @if (!is_null($item->product_image_3))
-                                                <img src="{{url($item->product_image_3)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/3')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>  
+                                                <img src="{{url($item->product_image_3)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/3')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>
                                                 @endif
                                                 <label for="product-image-3">Product Image - 3</label>
                                                 <input type="file" name="product-image-3" class="input-group-text input-box p-1">
@@ -157,7 +157,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <br>
                                                 @if (!is_null($item->product_image_4))
-                                                <img src="{{url($item->product_image_4)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/4')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>  
+                                                <img src="{{url($item->product_image_4)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/4')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>
                                                 @endif
                                                 <label for="product-image-4">Product Image - 4</label>
                                                 <input type="file" name="product-image-4" class="input-group-text input-box p-1">
@@ -167,7 +167,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <br>
                                                 @if (!is_null($item->product_image_5))
-                                                <img src="{{url($item->product_image_5)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/5')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>  
+                                                <img src="{{url($item->product_image_5)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/5')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>
                                                 @endif
                                                 <label for="product-image-5">Product Image - 5</label>
                                                 <input type="file" name="product-image-5" class="input-group-text input-box p-1">
@@ -177,7 +177,7 @@
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <br>
                                                 @if (!is_null($item->product_image_6))
-                                                <img src="{{url($item->product_image_6)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/6')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>  
+                                                <img src="{{url($item->product_image_6)}}" alt="product-img" class="img-fluid img-thumbnail w-25 h-auto"><a href="{{url('admin/delete/img/'.$item->id.'/6')}}" class="btn btn-danger btn-sm ml-2">Delete</a><br><br>
                                                 @endif
                                                 <label for="product-image-6">Product Image - 6</label>
                                                 <input type="file" name="product-image-6" class="input-group-text input-box p-1">
@@ -251,16 +251,16 @@
                                                     <button type="button" class="btn btn-primary" onclick="addCameraRear()">Add Attribute</button>
                                                     <button type="button" class="btn btn-danger" onclick="removeCameraRear()">Remove Attribute</button>
                                                     <div class="pt-2 pb-3" id="attribute-input-div">
-    
+
                                                     </div>
                                                     <input type="text" value="" id="attribute-count" hidden name="attribute-count">
 
                                                     @if ($item->product_attributes != "")
                                                     @foreach (unserialize($item->product_attributes) as $data => $key)
-                                                    <script>addCameraRearDatabase('{{$key[0]}}')</script>    
+                                                    <script>addCameraRearDatabase('{{$key[0]}}')</script>
                                                     @endforeach
                                                     @endif
-                                                    
+
                                                 </div>
                                                 <br>
                                             </div>
@@ -273,7 +273,7 @@
                                                     <button type="button" class="btn btn-primary" onclick="addSize()">Add Size</button>
                                                     <button type="button" class="btn btn-danger" onclick="removeSize()">Remove Size</button>
                                                     <div class="pt-2 pb-3" id="size-input-div">
-    
+
                                                     </div>
                                                     <input type="text" id="size-count" name="size-count" hidden>
                                                     <script>
@@ -411,7 +411,7 @@
                                                     <button type="button" class="btn btn-primary" onclick="addVariant()">Add Variant</button>
                                                     <button type="button" class="btn btn-danger" onclick="removeVariant()">Remove Variant</button>
                                                     <div class="pt-2 pb-3" id="variant-input-div">
-    
+
                                                     </div>
                                                     <input type="text" id="variant-count" name="variant-count" hidden>
 
@@ -425,7 +425,7 @@
                                                         </script>
                                                     @endforeach
                                                     @endif
-                                                    
+
                                                 </div>
                                                 <br>
                                             </div>
@@ -478,13 +478,13 @@
 
                                         </div>
                                         <!-- Form Rows (End) -->
-                                        
+
                                     </div>
 
                                     {{-- Submit Buttons --}}
                                     <div class="card-footer bg-light border-top">
                                         <div class="row">
-                                            
+
                                             <div class="col-lg-3 col-md-4 col-sm-12">
                                                 <button type="submit" name="submit" class="btn btn-success w-100">Save Changes</button>
                                             </div>
@@ -508,7 +508,7 @@
                                                     });
                                                 }
                                             </script>
-                                          
+
                                         </div>
                                     </div>
 
@@ -520,29 +520,29 @@
 
                         <br>
                         <br>
-    
+
                     </div>
                     <!-- /.container-fluid -->
-    
+
                 </div>
                 <!-- End of Main Content -->
-    
+
             </div>
             <!-- End of Content Wrapper -->
-    
+
         </div>
         <!-- End of Page Wrapper -->
-    
-    
+
+
         @include('admin.footerLinks')
-    
+
         <script>
             $(document).ready(function(){
                 $('#all-product-tab').addClass('active');
             });
         </script>
-    
+
     </body>
-    
+
 </html>
 @endif
