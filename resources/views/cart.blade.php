@@ -26,8 +26,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="con-text">
-                        <h2 class="page-title">shopping-Cart</h2>
-                        <p><a href="{{url('')}}">Home</a> | shopping-Cart</p>
+                        <h2 class="page-title">shopping Cart</h2>
+                        <p><a href="{{url('')}}">Home</a> | shopping Cart</p>
                     </div>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                             <p class="return-to-shop">
                                 <a class="button wc-backward" href="{{url('/')}}">Continue Shopping</a>
                             </p>
-                            <a class="wc-forward" href="javascript:redirectCheckout();">Confirm Order</a>
+                            <a class="wc-forward" href="javascript:redirectCheckout();">Proceed</a>
                         </div>
                     </div>
                 </div>

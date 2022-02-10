@@ -37,7 +37,10 @@
             <div class="card rounded-0">
                 <div class="card-header bg-white">
                     <h5 class="font-weight-bold mb-0 text-dark float-left">Order Details : {{$key->id}}</h5>
-                    <a class="card-link float-right" href="javascript:cancelOrder();">Cancel Order</a>
+                    
+                    @if ($key->order_status != "Cancelled")
+                        <a class="card-link float-right" href="javascript:cancelOrder();">Cancel Order</a>    
+                    @endif
                 </div>
                 <div class="card-body">
                     <h6 class="text-dark mb-1">{{$key->name}}</h6>

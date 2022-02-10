@@ -49,7 +49,7 @@
                             <h6 class="tb-titlel">{{$item->blog_description}}</h6>
                             <hr>
                             <div class="blog-desc">
-                            <p>{!!$item->blog_content!!}</p>
+                            <pre>{!!$item->blog_content!!}</pre>
                             </div>
                             {{-- <div class="next-pre">
                                 <a class="blog1" href="#"> <i class="fa fa-angle-left"></i> Previous</a>

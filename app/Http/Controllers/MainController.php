@@ -23,9 +23,9 @@ class MainController extends Controller
         $saleProduct = Product::where('product_offer_type','Sale')->paginate(10);
         $bestsellerProduct = Product::where('product_group_type','Best Seller')->paginate(10);
         $latestProduct = Product::orderBy('created_at','DESC')->paginate(10);
-        $specialProduct = Product::where('product_group_type','Special')->paginate(2);
-        $topProduct = Product::where('product_group_type','Top')->paginate(2);
-        $mostviewProduct = Product::where('product_group_type','Most View')->paginate(2);
+        $specialProduct = Product::where('product_group_type','Special')->paginate(3);
+        $topProduct = Product::where('product_group_type','Top')->paginate(3);
+        $mostviewProduct = Product::where('product_group_type','Most View')->paginate(3);
         $blogs = Blog::where('blog_status','Publish')->orderBy('created_at','DESC')->paginate(10);
         return view('welcome',['saleProduct' => $saleProduct,'bestsellerProduct' => $bestsellerProduct, 'latestProduct' => $latestProduct, 'topProduct' => $topProduct, 'mostviewProduct' => $mostviewProduct, 'specialProduct' => $specialProduct ,'blogs' => $blogs]);
     }
@@ -48,7 +48,7 @@ class MainController extends Controller
 
     public function indexProductByCategory($parent,$sub) {
         $product = Product::where('product_parent_category',$parent)->where('product_sub_category',$sub)->get();
-        $title = $parent . " " . $sub;
+        $title = $parent . " | " . $sub;
         return view('productList',['product'=>$product,'title'=>$title]);
     }
 
@@ -61,12 +61,6 @@ class MainController extends Controller
     public function indexProductByParentCategory($parent) {
         $product = Product::where('product_parent_category',$parent)->get();
         $title = $parent;
-        return view('productList',['product'=>$product,'title'=>$title]);
-    }
-
-    public function indexProductBySubCategory($sub) {
-        $product = Product::where('product_sub_category',$sub)->get();
-        $title = $sub;
         return view('productList',['product'=>$product,'title'=>$title]);
     }
 

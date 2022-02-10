@@ -65,39 +65,44 @@
                 <div class="col-md-12">
                     <div class="map-area">
                         <div class="contact-map">
-                            <div id="hastech"></div>
+                          <div class="container text-center">
+                    <h3>Operating Address:</h3>
+                    <p>The hostel yard, 12-13, royal street lane, Raipur khadar, sector -126, Noida - 201310</p>
+                </div><br><br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    
 
     @include('layouts.footer')
 
-    {{-- Google Maps Script --}}
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        var myCenter=new google.maps.LatLng(23.763523, 90.431098);
-        function initialize() {
-            var mapProp = {
-                center:myCenter,
-                scrollwheel: false,
-                zoom:17,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("hastech"),mapProp);
-            var marker=new google.maps.Marker({
-                position:myCenter,
-                animation:google.maps.Animation.BOUNCE,
-                icon:'img/map-marker.png',
-                map: map,
-            });
+    <!--{{-- Google Maps Script --}}-->
+    <!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
+    <!--<script>-->
+    <!--    var myCenter=new google.maps.LatLng(44.868771, 24.856159);-->
+    <!--    function initialize() {-->
+    <!--        var mapProp = {-->
+    <!--            center:myCenter,-->
+    <!--            scrollwheel: false,-->
+    <!--            zoom:17,-->
+    <!--            mapTypeId:google.maps.MapTypeId.ROADMAP-->
+    <!--        };-->
+    <!--        var map=new google.maps.Map(document.getElementById("hastech"),mapProp);-->
+    <!--        var marker=new google.maps.Marker({-->
+    <!--            position:myCenter,-->
+    <!--            animation:google.maps.Animation.BOUNCE,-->
+    <!--            icon:'img/map-marker.png',-->
+    <!--            map: map,-->
+    <!--        });-->
 
-            marker.setMap(map);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script> 
+    <!--        marker.setMap(map);-->
+    <!--    }-->
+    <!--    google.maps.event.addDomListener(window, 'load', initialize);-->
+    <!--</script> -->
     
 </body>
 </html>

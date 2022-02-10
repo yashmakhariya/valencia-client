@@ -5,7 +5,7 @@
     @php 
         $pageTitle = $product->implode('product_name');
         $description = $product->implode('product_description');
-        $image = $product->implode('product_image_thumbnail');
+        $image = $product->implode('product_image_1');
     @endphp
 
     @include('layouts.app')
@@ -109,7 +109,7 @@
                                     <div class="tb-product-price font-noraure-3 nurore">
                                         <span class="amount2 ana">₹ {{$item->product_price_discounted}} </span>
                                         @if ($item->product_price_discounted != $item->product_price)
-                                        <span class="amount2 ana ml-2" style="text-decoration: line-through;">₹ {{$item->product_price}} </span>    
+                                        <span class="amount2 ana ml-2" style="text-decoration: line-through; color:red !important;">₹ {{$item->product_price}} </span>    
                                         @endif
                                     </div>
                                     <div class="stock">
@@ -138,9 +138,9 @@
                                 @endif
                                 <hr>    
                                 @endif
-                                <form method="POST" action="#" id="product-page-form" onsubmit="(e) => e.preventDefault();">
+                                 <form method="POST" action="#" id="product-page-form" onsubmit="(e) => e.preventDefault();">
                                 <input type="number" value="{{$item->id}}" hidden name="id" id="product-page-id">
-                                <div class="woocommerce-shipping-calculator">
+                                <!-- <div class="woocommerce-shipping-calculator">
                                     @if (!is_null($item->product_size))
                                     <p class="form-row form-row-wide">
                                         <label>
@@ -155,7 +155,56 @@
                                         </select>
                                     </p>
                                     @endif
+                                </div> -->
+                                @if (!is_null($item->product_size))
+                                <div class="woocommerce-shipping-calculator">
+                                    <div class="d-inline-block">
+                                        @foreach (unserialize($item->product_size) as $data => $sizes)
+                                        <div class="size-btn-div">
+                                            <span class="size-btn" onclick="SetSize(event)">{{$sizes[0]}}</span>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    <input type="text" readonly name="size" id="product-page-size" required hidden>
+                                    <script defer>
+                                        const SetSize = (event) => {
+                                            document.getElementById('product-page-size').value = event.target.innerHTML;
+                                            let tags = document.querySelectorAll(".size-btn-div .size-btn");
+                                            tags.forEach( tag => {
+                                                tag.classList.remove('active');
+                                            });
+                                            event.target.classList.add('active');
+                                        };
+                                        document.querySelector('.size-btn').click();
+                                    </script>
                                 </div>
+                                <hr>
+                                <style>
+                                    .size-btn-div {
+                                        display: inline-block !important;
+                                    }
+                                    .size-btn {
+                                        border: 1px solid #454545;
+                                        color: #454545;
+                                        height: 37px;
+                                        min-width: 37px;
+                                        padding: 10px 20px;
+                                        border-radius: 25px;
+                                        width: fit-content;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-size: 0.9rem;
+                                        cursor: pointer;
+                                        line-height: normal;
+                                    }
+                                    .size-btn.active {
+                                        border: 1px solid #454545;
+                                        background-color: #454545;
+                                        color: #fff;
+                                    }
+                                </style>
+                                @endif
                                 <div class="single-price">
                                     <div class="ro-quantity clearfix">
                                         <label>
@@ -247,6 +296,14 @@
                                 @guest
 
                                 @else
+                                <!--<div class="cat_bottom">-->
+                                <!--    <p class="text-secondary h5 mb-4 mt-3">-->
+                                <!--        Login to your account to give rating.</p>-->
+                                <!--    <p class="buttons">-->
+                                <!--        <a class="button wc-forward" href="{{url('login')}}">Login</a>-->
+                                <!--    </p>-->
+                                                                  
+                                <!-- </div>-->
                                 <form action="{{route('review')}}" method="POST">
                                     @csrf
                                     <div class="sin-form2">
@@ -297,7 +354,7 @@
                                 <li class="b-none">
                                     <div class="tb-recent-thumbb">
                                         <a href="{{url('product/'.$product->token_number)}}">
-                                            <img class="attachment" src="{{url($product->product_image_thumbnail)}}" alt="">
+                                            <img class="attachment" src="{{url($product->product_image_1)}}" alt="">
                                         </a>
                                     </div>
                                     <div class="tb-recentb">
@@ -307,7 +364,7 @@
                                         <div class="tb-product-price font-noraure-3">
                                             <span class="amount2">₹ {{$product->product_price_discounted}}</span>
                                             @if ($product->product_price_discounted != $product->product_price)
-                                            <span class="amount ana"> ₹ {{$product->product_price}}</span>    
+                                            <span class="amount ana" style="text-decoration: line-through; color:red !important;"> ₹ {{$product->product_price}}</span>    
                                             @endif
                                         </div>
                                     </div>
@@ -341,7 +398,7 @@
                         @if ($product->product_offer_type != 'None')
                         <span class="onsale two">Sale!</span>    
                         @endif
-                        <img alt="" src="{{url($product->product_image_thumbnail)}}">
+                        <img alt="" src="{{url($product->product_image_1)}}">
                         <a class="la-icon"  href="{{url('product/'.$product->token_number)}}"><i class="fa fa-eye"></i></a>
                         <div class="tb-content">
                             <div class="tb-it">
@@ -352,7 +409,7 @@
                                     <div class="tb-product-price font-noraure-3">
                                         <span class="amount">₹ {{$product->product_price_discounted}}</span>
                                         @if ($product->product_price_discounted != $product->product_price)
-                                        <span class="amount2 ana"> ₹ {{$product->product_price}}</span>    
+                                        <span class="amount2 ana" style="text-decoration: line-through; color:red !important;"> ₹ {{$product->product_price}}</span>    
                                         @endif
                                     </div>
                                 </div>

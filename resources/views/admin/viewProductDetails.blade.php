@@ -434,6 +434,41 @@
                                                 <hr>
                                             </div>
 
+                                            {{-- Product Tags --}}
+                                            <div class="col-12">
+                                                <script defer>
+                                                    const data = [];
+                                                </script>
+                                                @foreach (DB::table('tags')->get() as $data)
+                                                <script>
+                                                    data.push("{{ $data->tag_name }}");
+                                                </script>
+                                                @endforeach
+                                                @php
+                                                    $product_tag_items = "";
+                                                    if (isset($item->product_tags)) {
+                                                        if (!is_null($item->product_tags)) {
+                                                            foreach (unserialize($item->product_tags) as $key => $data) {
+                                                                $product_tag_items .= ((string)$data . ', ');
+                                                            }
+                                                        }
+                                                    }
+                                                @endphp
+                                                <label for="product-tags"></label>
+                                                <input type="text" placeholder="Add Tags" class="input-group-text input-box tagify-input" value="{{$product_tag_items}}" name="product-tags">
+                                                <script defer>
+                                                    var input = document.querySelector('input[name=product-tags]');
+                                                    new Tagify(input, {
+                                                        whitelist: data,
+                                                        userInput: false,
+                                                    })
+                                                </script>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+
                                             {{-- Product Description --}}
                                             <div class="col-12">
                                                 <br>

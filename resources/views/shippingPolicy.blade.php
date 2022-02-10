@@ -26,14 +26,28 @@
 
     <section class="page-section">
         <div class="container">
-            
-            <h5>Shipping Policy heading</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem officia est reiciendis cum obcaecati, repellendus veritatis id. Molestias mollitia necessitatibus laudantium non dolorem, officiis obcaecati eum! Ab totam id quis.</p>
+
+            <div>
+                <h4>Shipping</h4>
+                <p>1. Ships To: Valencia ships all over the India.</p>
+                <p>2. Delivery Time: 6-7 Days within India Orders.</p>
+                <h6>Please note that customs fee and any taxes associated with your purchase is the responsibility of the customer.</h6><br>
+
+                <h4>Shipping Charges</h4>
+                <p>Shipping charges is free for all orders.</p>
+            </div>
+
+            <div>
+                <h4>Additional Information</h4>
+                <p>If you experience any difficulties while e your shipping address during checkout or while you are creating an account, please email us at <a href="mailto:info@valenciaclothing.in">info@valenciaclothing.in</a> with your full shipping address and contact number before you place your order so that an account can be set up for you.</p>
+                <h6>If an incorrect shipping address is provided during checkout, reserves the right to charge a reshipment fee of Rs 200.</h6>
+            </div>
+
 
         </div>
     </section>
 
     @include('layouts.footer')
-    
+
 </body>
 </html>

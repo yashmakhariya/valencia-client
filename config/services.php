@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_AUTH_CLIENT_ID'),
         'client_secret' => env('GOOGLE_AUTH_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth/google/callback',
+        'redirect' => 'https://valenciaclothing.in/auth/google/callback',
       ],
 
 ];

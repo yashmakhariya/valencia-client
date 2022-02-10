@@ -107,7 +107,7 @@
 		<div class="invoice-box">
 			<table cellpadding="0" cellspacing="0">
 				<tr class="top">
-					<td colspan="5">
+					<td colspan="6">
 						<table>
 							<tr>
 								<td class="title">
@@ -124,7 +124,7 @@
 				</tr>
 
 				<tr class="information">
-					<td colspan="5">
+					<td colspan="6">
 						<table>
 							<tr>
 								<td>Order ID : {{$key->id}} <br>
@@ -143,6 +143,7 @@
 
 				<tr class="heading">
                     <td>Sr. No.</td>
+					<td>Image</td>
 					<td>Product</td>
 					<td>Size</td>
                     <td>Quantity</td>
@@ -154,6 +155,7 @@
                     @foreach ($product->where('id',$value[0]) as $data)
                         <tr>
                             <td>{{$item + 1}}</td>
+                            <td><img src={{url($data->product_image_thumbnail)}} style="height: 50px; 50px;" alt="product-img"/></td>
                             <td>{{$data->product_name}}</td>
 							<td>{{$value[3]}}</td>
                             <td>{{$value[1]}}</td>
@@ -162,7 +164,7 @@
                     @endforeach
                 @endforeach
 				<tr class="item">
-					<td colspan="4" style="text-align: right;">GST : </td>
+					<td colspan="5" style="text-align: right;">GST : </td>
 					@if ($key->gst != 'Included')
 					<td style="text-align: right;">Rs. {{number_format($key->gst,2)}}</td>
 					@else 
@@ -170,7 +172,7 @@
 					@endif
 				</tr>
 				<tr class="item">
-					<td colspan="4" style="text-align: right;">Shipping : </td>
+					<td colspan="5" style="text-align: right;">Shipping : </td>
 					@if ($key->shipping != 'Free')
 					<td style="text-align: right;">Rs. {{number_format($key->shipping,2)}}</td>
 					@else 
@@ -179,12 +181,12 @@
 				</tr>
 				@if (!is_null($key->coupon))
 				<tr class="item">
-					<td colspan="4" style="text-align: right;">Coupon code : </td>
+					<td colspan="5" style="text-align: right;">Coupon code : </td>
 					<td style="text-align: right;"> - Rs. {{number_format(($key->coupon),2)}}</td>
 				</tr>
 				@endif
                 <tr class="item">
-					<td colspan="4" style="text-align: right;">Total : </td>
+					<td colspan="5" style="text-align: right;">Total : </td>
 					<td style="text-align: right;">Rs. {{number_format($key->total,2)}}</td>
 				</tr>
 				

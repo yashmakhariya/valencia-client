@@ -99,14 +99,15 @@
                                             <div class="col-12">
                                                 <br>
                                                 <label for="blog-content">Blog Content</label>
-                                                <div class="sample-toolbar">
+                                                <textarea rows="5" class="input-group-text input-box" name="blog-content" required>{{$item->blog_content}}</textarea>
+                                                {{--<div class="sample-toolbar">
                                                     <a class="btn btn-primary" href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span></a>
                                                     <a class="btn btn-primary" href="javascript:void(0)" onclick="format('italic')"><span class="fa fa-italic fa-fw"></span></a>
                                                     <a class="btn btn-primary" href="javascript:void(0)" onclick="format('insertunorderedlist')"><span class="fa fa-list fa-fw"></span></a>
                                                 </div>
                                                 <br>
                                                 <div onkeyup="convertToInput()" onkeydown="convertToInput()" class="editor border border-secondary p-2 rounded" style="" id="blog-editor">{!!$item->blog_content!!}</div>
-                                                <input type="text" class="input-group-text input-box" name="blog-content" value="{{$item->blog_content}}" hidden id="blog-content">
+                                                
                                                 <script>
                                                     window.addEventListener('load', function(){
                                                         document.getElementById('blog-editor').setAttribute('contenteditable', 'true');
@@ -118,7 +119,7 @@
                                                     function convertToInput() {
                                                         document.getElementById('blog-content').value = document.getElementById('blog-editor').innerHTML;
                                                     }
-                                                </script>
+                                                </script>--}}
                                             </div>
 
                                         </div>

@@ -10,6 +10,7 @@ use App\Models\Coupon;
 use App\Models\MetaData;
 use App\Models\User;
 use App\Models\Blog;
+use App\Models\Tag;
 use App\Models\ParentCategory;
 use App\Models\SubCategory;
 use App\Models\NewsLetterEmail;
@@ -328,7 +329,15 @@ class AdminController extends Controller
                 $product->product_variant = serialize($variant);
             }
             else { $product->product_variant = null; }
-            
+
+            if ($request->input('product-tags') != "") {
+                $data_array = [];
+                foreach (json_decode($request->input('product-tags')) as $data) {
+                    array_push($data_array,$data->value);
+                }
+                $product->product_tags = serialize($data_array);
+            } else { $product->product_tags = null; }
+
             // Upload images and resize them into 1000 x 1000 px 
 
             if ($request->hasFile('product-image-1')) {
@@ -692,9 +701,26 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Changes saved');
     }
 
+    public function updateSettingTag(Request $request) {
+        for ($i=1; $i <= $request->input('tag-count'); $i++) {
+            if (Tag::where('tag_name',$request->input('tag-'.$i))->doesntExist()) {
+                $tag = new Tag();
+                $tag->tag_name = $request->input('tag-'.$i);
+                $tag->save();
+            }
+        }
+        return redirect()->back()->with('message','Changes saved');
+    }
+
     public function handleSubCategoryDelete($id) {
         $subCategory = SubCategory::where('id',$id)->first();
         $subCategory->delete();
+        return redirect()->back()->with('message','Changes saved');
+    }
+
+    public function handleTagDelete($id) {
+        $tag = Tag::where('id',$id)->first();
+        $tag->delete();
         return redirect()->back()->with('message','Changes saved');
     }
 

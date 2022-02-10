@@ -1,5 +1,5 @@
 
-        {!!__('<!--- Developed by Labhansh Satpute --->')!!}
+        {!!__('<!--- Developed by Makku Enterprises --->')!!}
 
         {{-- Run Initial Script --}}
         @guest
@@ -100,6 +100,16 @@
         {{-- Google Fonts --}}
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P793J3Q1PV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-P793J3Q1PV');
+        </script>
 
         {{-- Stylesheets --}}
         <link rel="stylesheet" href="{{url('css/animate.css')}}">

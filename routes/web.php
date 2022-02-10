@@ -95,7 +95,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/blog/{id}', [AdminController::class, 'indexBlogDetail']); // Show Blog Details
     Route::get('/product/{id}', [AdminController::class, 'indexProducDetail']); // Show Product Details
     Route::get('/order/{id}', [AdminController::class, 'indexOrderDetail']); // Show Order Details
-
+    
     Route::post('/create/product', [AdminController::class, 'createProduct'])->name('create.product'); // Create Product
     Route::post('/create/coupon', [AdminController::class, 'createCoupon'])->name('create.coupon'); // Create Coupon
     Route::post('/create/blog', [AdminController::class, 'createBlog'])->name('create.blog'); // Create blog
@@ -111,9 +111,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::post('/update/setting/category/parent', [AdminController::class, 'updateSettingCategoryParent'])->name('update.setting.category.parent');  // Change Parent Categories
     Route::post('/update/setting/category/sub', [AdminController::class, 'updateSettingCategorySub'])->name('update.setting.category.sub');  // Change Sub Categories
 
-
+    Route::post('/update/setting/tag', [AdminController::class, 'updateSettingTag'])->name('update.setting.tag');  // Change tags
+    
     Route::get('/delete/parent/category/{id}', [AdminController::class, 'handleParentCategoryDelete']); // Delete parent category
     Route::get('/delete/sub/category/{id}', [AdminController::class, 'handleSubCategoryDelete']); // Delete sub category
+    Route::get('/delete/tag/{id}', [AdminController::class, 'handleTagDelete']); // Delete tag
     Route::get('/delete/coupon/{id}', [AdminController::class, 'deleteCoupon']); // Delete Coupon Code
     Route::get('/delete/product/{id}', [AdminController::class, 'deleteProduct']); // Delete Product
     Route::get('/delete/access/{id}', [AdminController::class, 'deleteAdmin']); // Delete Admin Access

@@ -27,9 +27,11 @@
     <section class="page-section">
         <div class="container">
             
-            <h5>About us heading</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem officia est reiciendis cum obcaecati, repellendus veritatis id. Molestias mollitia necessitatibus laudantium non dolorem, officiis obcaecati eum! Ab totam id quis.</p>
+            <h5>About Valencia</h5>
+            <p>Valencia is a shopping website that focuses on the newest fashion trends and innovative apparel concepts. <br><br>At Valencia, our mission is to enable women and men to get a unique fashionable look. We believe that if you look good, you feel good. Valencia offers you a diverse selection of fashionable clothes and activity based t-shirts, all at affordable prices to make them accessible to you.</p>
             
+            
+            <h4>HAPPY SHOPPING :)</h4>
         </div>
     </section>
 

@@ -45,8 +45,8 @@ padding: 0
     padding: 0.2em 0;
 }
 body {
-    color: #747474;
-    font-family: 'Roboto', sans-serif;
+    color: #454545;
+    font-family: 'DIN Neuzeit Grotesk', sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: normal;
@@ -59,13 +59,13 @@ body {
     width: 100%;
 }
 pre {
-    color: #747474 !important;
+    color: #454545 !important;
     font-size: 13px !important;
     font-size: 13px !important;
     font-style: normal !important;
     font-weight: normal !important;
     line-height: 1.7 !important;
-    font-family: 'Roboto', sans-serif !important;
+     font-family: 'DIN Neuzeit Grotesk', sans-serif !important;
 }
 
 
@@ -239,7 +239,7 @@ pre {
 }
 .muti_menu ul li .rayed.ru .tas a {
     border-bottom: 1px solid rgba(170, 170, 170, 0.2);
-    color: #747474;
+    color: #000;
     display: block;
     font-family: inherit;
     font-size: 13px;
@@ -775,7 +775,7 @@ a.min1:hover{
     width: 100%;
 }
 .product-area {
-    background: rgba(0, 0, 0, 0) url("../images/bg-img/bg-have-overlay.webp") ;
+    background: rgba(0, 0, 0, 0) url("../images/bg-img/bg-have-overlay.jpg") ;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -796,7 +796,7 @@ a.min1:hover{
     text-transform: uppercase;
 }
 .pro-text::after {
-    background: rgba(0, 0, 0, 0) url("assets/images/underline-style-1.png") no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../images/icon-img/underline-style-1.png") no-repeat scroll 0 0;
 }
 .product-area .tb-product-item-inner .onsale, .product-tab-area .tb-product-item-inner .onsale, .design-area .tb-product-item-inner .onsale, .shop-area .tb-product-item-inner .onsale, .single-pro-area7 .tb-product-item-inner .onsale {
     background: #fff none repeat scroll 0 0;
@@ -845,12 +845,12 @@ a.min1:hover{
     width: 100%;
 }
 .product-area .tb-item-content-info .tb-product-title a, .tb-beg a{
-    color: #747474;
+    color: black;
     font-size: 14px;
     line-height: 17px;
     text-transform: uppercase;
     transition: all 0.4s ease 0s;
-    font-weight: 400;
+    font-weight: 600;
 }
 .product-area .tb-product-price, .product-tab-area .tb-product-price, .modal-content .tb-product-price, .home-3 .tb-product-price, .top-shop-sidebar .tb-product-price, .shop-area .tb-product-price, .single-product-area .tb-product-price{
     color: #484848;
@@ -1113,6 +1113,8 @@ line-height: 39px;
 }
 .tb-product-item-inner.tb2.pct-last .tb-content {
     padding: 20px 10px;
+    color: black;
+    font-weight: 700;
     text-align: center;
 }
 .tb-product-item-inner.tb2.pct-last .tb-content  span.amount2 {
@@ -1231,7 +1233,7 @@ line-height: 39px;
 }
 
 .lastest-area .lastest-from::after, .design-area .lastest-from::after{
-    background: rgba(0, 0, 0, 0) url("img/icon-img/underline-style-2.png") no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../images/icon-img/underline-style-2.png") no-repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 50%;
@@ -1616,7 +1618,7 @@ address {
     top: 38%;
 }
 .client-area {
-    background-image: url("../images/bg-img//bg-have-overlay.webp");
+    background-image: url("../images/bg-img/bg-have-overlay.jpg");
     background-attachment: fixed !important;
     background-size: cover !important;
 }
@@ -1726,6 +1728,8 @@ address {
 }
 .home-3 .muti_menu ul li a {
     color: #5d5d5d;
+    letter-spacing: 2px !important;
+     font-family: 'Oswald', sans-serif;
 }
 .home-3 .tb-menu-sidebar .search-item > a {
     color: #5d5d5d;
@@ -2096,9 +2100,10 @@ address {
 /*--------------------- 8. contact--------------------*/
 .contact-img-area {
     background-color: transparent;
-    background-image: url("../images/bg-img/bg-have-overlay.webp");
+    background-image: url("../images/bg-img/bg-have-overlay.jpg");
     background-position: center top;
     background-repeat: no-repeat;
+    background-size: cover !important;
     padding: 100px 0 100px;
 }
 .contact-img-area::before {
@@ -2776,6 +2781,46 @@ a.clear-all {
     font-size: 12px;
     color: #707070;
 }
+
+
+/* offer */
+
+.offer {
+  background-image: url(https://i.ibb.co/Z1Wpsgp/offer-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.offer .row {
+  margin: initial !important;
+}
+
+.offer .subscribe {
+  max-width: 500px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 60px;
+  background: #ffffff8c;
+}
+
+.offer .subscribe a {
+  width: 100px;
+  display: block;
+  color: #ffffff !important;
+  background: #000000;
+  text-decoration: none !important;
+  padding: 5px;
+  text-align: center;
+}
+
+.offer img {
+  width: 300px;
+  height: 500px;
+  margin-bottom: -100px;
+  margin-top: 100px;
+}
+
+
 .two-part .page p {
     float: left;
     height: 50px;
@@ -4315,7 +4360,7 @@ p.checkout-coupon.full input[type="submit"] {
     font-weight: 700;
     padding: 0.5em 14px;
     text-decoration: none;
-    color: #bebebe !important;
+    color: #454545 !important;
     font-size: 17px !important;
     font-weight: normal !important;
     letter-spacing: 0;
@@ -4324,7 +4369,7 @@ p.checkout-coupon.full input[type="submit"] {
 }
 .single-product-area .text-sin .tab-content {
     background-clip: padding-box;
-    border: 1px solid #bebebe !important;
+    border: 1px solid #454545 !important;
     border-radius: 0 !important;
     padding: 30px 25px !important;
 }

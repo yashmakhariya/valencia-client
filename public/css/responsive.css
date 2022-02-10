@@ -547,6 +547,10 @@
         top: 76px;
     }
     
+    .mobileview{
+        width:50% !important;
+    }
+    
     .ro-info-box-wrap.tpl3 {
         max-width: 100%;
     }

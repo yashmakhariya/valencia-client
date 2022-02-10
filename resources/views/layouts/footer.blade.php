@@ -8,27 +8,26 @@
                                 <div class="textwidget">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a>
                                                 <i class="fa fa-map-marker-alt"></i>
-                                                <span>NORAURE London Oxford Street 012 United Kingdom.</span>
+                                                <span>The hostel yard, 12-13, royal street lane, Raipur khadar, sector -126, Noida - 201310</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-envelope"></i>
-                                                <span>emailnoraure@gmail.com emailsupport@gmail.com</span>
+                                            <a href="mailto:info@valenciavlothing.in"><i class="fa fa-envelope"></i><span>info@valenciaclothing.in</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-phone-alt"></i>
-                                                <span>
-                                                    (+92) 3456 7890
-                                                    <br>
-                                                    (+92) 1234 5678
-                                                </span>
-                                            </a>
-                                        </li>
+                                        <br>
+                                        <!--<li>-->
+                                        <!--    <a href="tel:+919953089922">-->
+                                        <!--        <i class="fa fa-phone-alt"></i>-->
+                                        <!--        <span>-->
+                                        <!--            (+91) 9953089922-->
+                                                   
+                                                    
+                                        <!--        </span>-->
+                                        <!--    </a>-->
+                                        <!--</li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -42,7 +41,7 @@
                                         <li><a href="{{url('dashboard')}}">My account</a></li>
                                         <li><a href="{{url('wishlist')}}">Wish List</a></li>
                                         <li><a href="{{url('cart')}}">Cart</a></li>
-                                        <li><a href="{{url('contact')}}">Contact us</a></li>
+                                        <li><a href="{{url('contact')}}">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -87,11 +86,9 @@
                                     <h3 class="wg-title">Connect Us</h3>
                                     <div class="textwid">
                                         <ul class="socials">
-                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-rss"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                            <li><a href="https://www.instagram.com/valenciaclothing.in/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                                            <li><a href="https://twitter.com/Valencia_cloth" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -137,7 +134,7 @@
         <script src="{{url('js/parallax.min.js')}}"></script>
         <!-- zoom js -->
         <script src="{{url('js/jquery.snipe.min.js')}}"></script>
-        <!-- meanmenu JS -->		
+        <!-- meanmenu JS -->
         <script src="{{url('js/jquery.meanmenu.js')}}"></script>
 		<!-- owl.carousel js -->
         <script src="{{url('js/owl.carousel.min.js')}}"></script>
@@ -147,7 +144,7 @@
         <script src="{{url('js/jquery-ui.min.js')}}"></script>
 		<!-- wow js -->
         <script src="{{url('js/wow.min.js')}}"></script>
-        <!-- Nivo slider js --> 		
+        <!-- Nivo slider js -->
 		<script src="{{url('lib/js/jquery.nivo.slider.js')}}"></script>
 		<script src="{{url('lib/home.js')}}"></script>
 		<!-- plugins js -->
@@ -156,7 +153,7 @@
         <script src="{{url('js/main.js')}}"></script>
 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        
+
         <script src="{{url('js/script.js')}}"></script>
 
         @if($message = Session::get('message'))
@@ -167,3 +164,9 @@
             }).showToast();
         </script>
         @endif
+        
+        <script defer>
+            $(document).ready(function(){
+                $('#preloader-div').fadeOut(300);
+            });
+        </script>

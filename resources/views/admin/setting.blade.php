@@ -526,6 +526,110 @@
                         </form>
                         <!-- Change Sub Categories Row (End) -->
 
+                        <br>
+
+                        <!-- Change Tag Row (Start) -->
+                        <form action="{{route('update.setting.tag')}}" method="POST">
+                            @csrf
+                            <div class="card shadow">
+                                <div class="card-header py-3">
+                                    <h5 class="mb-0 font-weight-bold text-primary">Change Tags</h5>
+                                </div>
+                                <div class="card-body">
+
+                                    <!-- Form Rows (Start) -->
+                                    <div class="row">
+
+                                        {{-- Tags --}}
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div>
+                                                <div class="mb-3">
+                                                    <button type="button" class="btn btn-primary" onclick="addTag()">Add Tag</button>
+                                                    <button type="button" class="btn btn-danger" onclick="removeTag()">Remove Tag</button>
+                                                </div>
+                                                <div id="tag-input-div">
+                                                    
+                                                </div>
+                                                <input type="text" id="tag-count" hidden name="tag-count">
+                                            </div>
+                                            <script defer>
+                                                let TagCount = 0;
+                                                function addTag() {
+                                                    TagCount++;
+
+                                                    let InputDiv = document.createElement('div');
+                                                    InputDiv.className = "input-group-append mt-2 tag-div";
+                                                    InputDiv.id = "tag-div-" + TagCount;
+                                                    document.getElementById('tag-input-div').appendChild(InputDiv);
+
+                                                    let tabInput = document.createElement('input');
+                                                    tabInput.type = "text";
+                                                    tabInput.className = "input-group-text input-box tag-input";
+                                                    tabInput.name = "tag-" + TagCount;
+                                                    tabInput.required = true;
+                                                    tabInput.placeholder = "Tag " + TagCount;
+
+                                                    document.getElementById('tag-div-'+ TagCount).appendChild(tabInput);
+                                                    document.getElementById('tag-count').value = TagCount;
+                                                }
+                                                function removeTag() {
+                                                    document.querySelector('.tag-div:last-child').remove();
+                                                    TagCount--;
+                                                    document.getElementById('tag-count').value = TagCount;
+                                                }
+                                                function addTagDatabase(tagName,id) {
+                                                    TagCount++;
+
+                                                    let InputDiv = document.createElement('div');
+                                                    InputDiv.className = "input-group-append mt-2 tag-div";
+                                                    InputDiv.id = "tag-div-" + TagCount;
+                                                    document.getElementById('tag-input-div').appendChild(InputDiv);
+
+                                                    let tabInput = document.createElement('input');
+                                                    tabInput.type = "text";
+                                                    tabInput.className = "input-group-text input-box tag-input";
+                                                    tabInput.name = "tag-" + TagCount;
+                                                    tabInput.value = tagName;
+                                                    tabInput.required = true;
+                                                    tabInput.placeholder = "Tag " + TagCount;
+
+                                                    let deleteLink = document.createElement('a');
+                                                    deleteLink.setAttribute('href','/admin/delete/tag/'+id);
+                                                    deleteLink.className = "btn btn-danger ml-2";
+                                                    deleteLink.innerHTML = '<i class="far fa-trash-alt"></i>';
+
+                                                    document.getElementById('tag-div-'+ TagCount).appendChild(tabInput);
+                                                    document.getElementById('tag-div-'+ TagCount).appendChild(deleteLink);
+                                                    document.getElementById('tag-count').value = TagCount
+                                                }
+                                            </script>
+                                            @foreach (DB::table('tags')->get() as $data)
+                                            <script>
+                                                addTagDatabase('{{$data->tag_name}}','{{$data->id}}')
+                                            </script>
+                                            @endforeach
+                                        </div>
+
+                                    </div>
+                                    <!-- Form Rows (End) -->
+                                    
+                                </div>
+
+                                {{-- Submit Buttons --}}
+                                <div class="card-footer bg-light border-top">
+                                    <div class="row">
+                                        
+                                        <div class="col-lg-3 col-md-4 col-sm-12">
+                                            <button type="submit" name="submit" class="btn btn-success w-100">Save changes</button>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <!-- Change Tag Row (End) -->
+
                         @endif
 
                         <br>
